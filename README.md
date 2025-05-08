@@ -154,3 +154,43 @@ BUILD SUCCESSFUL (total time: 2 seconds)
 
 ![Screenshot (16)](https://github.com/user-attachments/assets/de140ff4-fede-4c78-85cd-9e51a7d0d596)
 
+OOP Concepts
+11. Create a class student with properties name, matricNo, and score, and add method to display the student's info.
+    ANSWER
+package cos261test;
+
+public class Cos261Test {
+//properties of the student
+    String name;
+    String matricNo;
+    double score;
+    //constructor to intiliaze student
+    public Cos261Test(String name, String matricNo, double score) {
+    this.name = name;
+    this.matricNo = matricNo;
+    this.score = score;
+    }
+    //the method to diplay student info
+    public void displayInfo(){
+    System.out.print("Name :" + name);
+    System.out.print("\nMatric Number :" + matricNo);
+    System.out.print("\nScore : " + score);
+    }
+    //method of testing the class
+    public static void main(String[] args) {
+    //creating a student object with simple data
+        Cos261Test stud = new Cos261Test(" Nwodo Ebenezer", " 2023/253257", 85.5);
+        //displaying the student's info
+        stud.displayInfo();
+        System.out.println();
+    }
+}
+
+run:
+Name : Nwodo Ebenezer
+Matric Number : 2023/253257
+Score : 85.5
+BUILD SUCCESSFUL (total time: 0 seconds)
+
+![Screenshot (17)](https://github.com/user-attachments/assets/2cd44536-46f6-4fee-b879-68025282c496)
+
