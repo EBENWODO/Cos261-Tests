@@ -8,6 +8,7 @@ package cos261test;
 
 public class Cos261Test {
     public static void main(String[] args) {
+    //printing out the hello world
         System.out.println("Hello, World");
     }
 }
@@ -25,13 +26,16 @@ import java.util.Scanner;
 
 public class Cos261Test {
     public static void main(String[] args) {
+    //initializing variables
         int num1, num2;
         int sum;
+        //users input
         Scanner input = new Scanner(System.in);
         System.out.print("Enter first number : ");
         num1 = input.nextInt();
         System.out.print("Enter second number : ");
         num2 = input.nextInt();
+        //addition of the numbers
         sum = num1 + num2;
         System.out.println("The sum of the two numbers are : " + sum);
     }
@@ -53,10 +57,13 @@ import java.util.Scanner;
 
 public class Cos261Test {
     public static void main(String[] args) {
+    //initializing variable
         int numb;
+        //users input
         Scanner input = new Scanner(System.in);
         System.out.print("Enter number : ");
         numb = input.nextInt();
+        //if statement using modulo operator
         if (numb % 2 == 0) {
         System.out.println("The number is even");
         }else{
@@ -79,7 +86,9 @@ import java.util.Scanner;
 
 public class Cos261Test {
     public static void main(String[] args) {
-      int num1,num2,num3;  
+    //initializing variables
+      int num1,num2,num3; 
+      //users input
       Scanner input = new Scanner (System.in);
       System.out.print("Enter first number : ");
       num1 = input.nextInt();
@@ -87,6 +96,7 @@ public class Cos261Test {
       num2 = input.nextInt();
       System.out.print("Enter third number : ");
       num3 = input.nextInt();
+      //if eles statement comparing 3 numbers 
         if (num1 >= num2 && num1 >= num3) {
             System.out.print("number " + num1 + " is the largest number");
         }else if (num2 >= num1 && num2 >= num3) {
@@ -112,11 +122,14 @@ import java.util.Scanner;
 
 public class Cos261Test {
     public static void main(String[] args) {
+    //initializing variable
       int num1;  
+      //users input
       Scanner input = new Scanner (System.in);
       System.out.print("Enter number : ");
       num1 = input.nextInt();
       System.out.print("Multiplication Table for " + num1 + " :");
+      //for statement for multiplication
         for (int i = 0; i < 12; i++) {
             System.out.println(num1 + " x " + i + " = " + (num1 * i));
         }
