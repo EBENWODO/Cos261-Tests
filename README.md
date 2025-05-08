@@ -107,3 +107,37 @@ BUILD SUCCESSFUL (total time: 5 seconds)
 
 9. Write a Java program to print the multiplication table of any number.
     ANSWER
+package cos261test;
+import java.util.Scanner;
+
+public class Cos261Test {
+    public static void main(String[] args) {
+      int num1;  
+      Scanner input = new Scanner (System.in);
+      System.out.print("Enter number : ");
+      num1 = input.nextInt();
+      System.out.print("Multiplication Table for " + num1 + " :");
+        for (int i = 0; i < 12; i++) {
+            System.out.println(num1 + " x " + i + " = " + (num1 * i));
+        }
+    }
+}
+
+run:
+Enter number : 5
+Multiplication Table for 5 :5 x 0 = 0
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+5 x 5 = 25
+5 x 6 = 30
+5 x 7 = 35
+5 x 8 = 40
+5 x 9 = 45
+5 x 10 = 50
+5 x 11 = 55
+BUILD SUCCESSFUL (total time: 2 seconds)
+
+![Screenshot (16)](https://github.com/user-attachments/assets/de140ff4-fede-4c78-85cd-9e51a7d0d596)
+
