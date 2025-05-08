@@ -105,9 +105,5 @@ BUILD SUCCESSFUL (total time: 5 seconds)
 
 ![image](https://github.com/user-attachments/assets/1d12e83d-974b-4551-a6d7-ac795fefa803)
 
-
-
-
-
-
-
+9. Write a Java program to print the multiplication table of any number.
+    ANSWER
