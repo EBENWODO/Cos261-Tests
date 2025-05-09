@@ -194,3 +194,6 @@ BUILD SUCCESSFUL (total time: 0 seconds)
 
 ![Screenshot (17)](https://github.com/user-attachments/assets/2cd44536-46f6-4fee-b879-68025282c496)
 
+13. Create a base class Person and a subclass Teacher.
+    ANSWER
+    
