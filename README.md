@@ -196,4 +196,60 @@ BUILD SUCCESSFUL (total time: 0 seconds)
 
 13. Create a base class Person and a subclass Teacher.
     ANSWER
-    
+package cos261test;
+
+public class Cos261Test {
+// here now u created the class Person like a blue print for creating a person 
+public static class Person {
+    String name;
+    int age;
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    // Method to display information
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}   // this is the end of the person class
+
+public static class Teacher extends Person {
+    String department;
+    String course;
+    // Constructor for the teacher class
+    public Teacher(String name, int age, String department, String course) {
+        super(name,age);
+    // super(age);
+        this.department = department;
+        this.course = course;
+    }
+    // you can add a method if u like 
+}
+    public static void main(String[] args) { 
+    // TO SEE SMTH HAPPEN u can create a new instance of the class u just created
+    Person person1 = new Person("Ebenezer ", 20);
+    System.out.println(person1.name + "Nwodo");
+    person1.displayInfo();
+    /* now u will see that we can create a new instance of a teacher class and
+    it will inherit some attribute like name and age from person: if u check well u ll see that we didn't define name 
+    and age for teacher but we fit call am or user am since its in Person that teacher inherited*/
+    // do u understand?
+    Teacher teacher1 = new Teacher("Aminat", 30, "Cos 261", "Computer Science");
+    // now that we ve created it lets do smth with it
+    System.out.println("Teacher " + teacher1.name + " Atanda" );
+    teacher1.displayInfo();
+    }
+}
+
+}
+
+run:
+Ebenezer Nwodo
+Name: Ebenezer , Age: 20
+
+Teacher Aminat Atanda
+Name: Aminat, Age: 30
+BUILD SUCCESSFUL (total time: 1 second)
+
+![Screenshot (18)](https://github.com/user-attachments/assets/c8957f75-f104-4730-8bcc-38d309e36f13)
