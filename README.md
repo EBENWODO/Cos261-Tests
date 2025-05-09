@@ -194,7 +194,41 @@ BUILD SUCCESSFUL (total time: 0 seconds)
 
 ![Screenshot (17)](https://github.com/user-attachments/assets/2cd44536-46f6-4fee-b879-68025282c496)
 
-13. Create a base class Person and a subclass Teacher.
+12. What is method overloading? Give a code example
+    ANSWER
+package cos261test;
+
+public class Cos261Test {
+    // Method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+    // Overloaded method to add three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+    // Overloaded method to add two doubles
+    public double add(double a, double b) {
+        return a + b;
+    }
+    public static void main(String[] args) {
+        Cos261Test calc = new Cos261Test();
+        System.out.println(calc.add(2, 3));         // Outputs 5
+        System.out.println(calc.add(1, 2, 3));      // Outputs 6
+        System.out.println(calc.add(2.5, 3.5));     // Outputs 6.0
+    }
+}
+
+run:
+5
+6
+6.0
+BUILD SUCCESSFUL (total time: 0 seconds)
+
+![Screenshot (19)](https://github.com/user-attachments/assets/a9844e04-11c5-439a-bb91-cde78dcbc27c)
+
+
+14. Create a base class Person and a subclass Teacher.
     ANSWER
 package cos261test;
 
@@ -241,7 +275,6 @@ public static class Teacher extends Person {
     teacher1.displayInfo();
     }
 }
-
 }
 
 run:
@@ -253,3 +286,293 @@ Name: Aminat, Age: 30
 BUILD SUCCESSFUL (total time: 1 second)
 
 ![Screenshot (18)](https://github.com/user-attachments/assets/c8957f75-f104-4730-8bcc-38d309e36f13)
+
+16. What naming conventions should be followed in Java for: Classes, Variables, Methods. Give examples with screenshot of code and output. 
+    ANSWER
+package cos261test;
+
+public class Cos261Test {
+    // Example 1
+    String studentName = "Ada";
+    int studentAge = 20;
+    void displayInfo() {
+        System.out.println("Student Name: " + studentName);
+        System.out.println("Student Age: " + studentAge);
+    }
+    // Example 2
+    String accountHolder = "John";
+    double accountBalance = 5000.75;
+    void showBalance() {
+        System.out.println("Account Holder: " + accountHolder);
+        System.out.println("Balance: " + accountBalance);
+    }
+    // Example 3
+    String carModel = "Toyota Camry";
+    int carYear = 2022;
+    void printDetails() {
+        System.out.println("Car Model: " + carModel);
+        System.out.println("Year: " + carYear);
+    }
+    public static void main(String[] args) {
+        Cos261Test obj = new Cos261Test();
+        obj.displayInfo();
+        obj.showBalance();
+        obj.printDetails();
+    }
+}
+
+run:
+Student Name: Ada
+Student Age: 20
+Account Holder: John
+Balance: 5000.75
+Car Model: Toyota Camry
+Year: 2022
+BUILD SUCCESSFUL (total time: 1 second)
+
+![Screenshot (20)](https://github.com/user-attachments/assets/b2279d06-f27e-49bb-bc03-e4e510cc364c)
+
+18. Explain the concept of DRY (Don’t Repeat Yourself) with a Java code example
+    ANSWER
+package cos261test;
+
+public class Cos261Test {
+    // Reusable method
+    static void greetUser(String name) {
+        System.out.println("Welcome, " + name + "!");
+    }
+    public static void main(String[] args) {
+        greetUser("Ada");
+        greetUser("John");
+        greetUser("Grace");
+    }
+}
+
+run:
+Welcome, Ada!
+Welcome, John!
+Welcome, Grace!
+BUILD SUCCESSFUL (total time: 1 second)
+
+![Screenshot (21)](https://github.com/user-attachments/assets/838c254b-4e63-48bd-9938-9173c3619070)
+
+25. Write a sample Java method with JavaDoc comments. 
+   ANSWER
+package cos261test;
+
+   /**
+ * Utility class for number operations.
+ */
+public class Cos261Test {
+    /**
+     * Checks if a number is even.
+     *
+     * @param number the number to check
+     * @return true if the number is even, false otherwise
+     */
+    public static boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+    public static void main(String[] args) {
+        System.out.println("Is 8 even? " + isEven(8));
+        System.out.println("Is 7 even? " + isEven(7));
+    }
+}
+
+run:
+Is 8 even? true
+Is 7 even? false
+BUILD SUCCESSFUL (total time: 0 seconds)
+
+![Screenshot (22)](https://github.com/user-attachments/assets/7194ede9-3ffb-4328-880e-510fef8f8045)
+
+Mini Projects / Logic Building 
+
+31. Build a command-line application that keeps track of student grades and allows adding, updating, and viewing records.
+    ANSWER
+package cos261test;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Cos261Test {
+    public static void main(String[] args) {
+        HashMap<String, String> records = new HashMap<>();
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to the Student Grade Tracker!");
+        while (true) {
+            System.out.println("\nWhat would you like to do?");
+            System.out.println("1 - Add a student record");
+            System.out.println("2 - Update a student's grade");
+            System.out.println("3 - View all records");
+            System.out.println("4 - Exit");
+            System.out.print("Enter your choice (1-4): ");
+            String choice = input.nextLine();
+            if (choice.equals("1")) {
+                System.out.print("Enter student name: ");
+                String name = input.nextLine();
+                if (records.containsKey(name)) {
+                    System.out.println("This student already exists. Try updating instead.");
+                } else {
+                    System.out.print("Enter grade: ");
+                    String grade = input.nextLine();
+                    records.put(name, grade);
+                    System.out.println("Student added successfully!");
+                }
+            } else if (choice.equals("2")) {
+                System.out.print("Enter student name to update: ");
+                String name = input.nextLine();
+                if (records.containsKey(name)) {
+                    System.out.print("Enter new grade: ");
+                    String grade = input.nextLine();
+                    records.put(name, grade);
+                    System.out.println("Grade updated successfully!");
+                } else {
+                    System.out.println("Oops! That student doesn't exist.");
+                }
+            } else if (choice.equals("3")) {
+                System.out.println("\n--- All Student Records ---");
+                if (records.isEmpty()) {
+                    System.out.println("No records yet. Try adding one!");
+                } else {
+                    for (String name : records.keySet()) {
+                        System.out.println(name + " - " + records.get(name));
+                    }
+                }
+            } else if (choice.equals("4")) {
+                System.out.println("Thanks for using the tracker. Goodbye!");
+                break;
+            } else {
+                System.out.println("Invalid option. Please pick 1, 2, 3, or 4.");
+            }
+        }
+        input.close();
+    }
+}
+
+run:
+Welcome to the Student Grade Tracker!
+
+What would you like to do?
+1 - Add a student record
+2 - Update a student's grade
+3 - View all records
+4 - Exit
+Enter your choice (1-4): 1
+Enter student name: Ebenezer Nwodo
+Enter grade: 90
+Student added successfully!
+
+What would you like to do?
+1 - Add a student record
+2 - Update a student's grade
+3 - View all records
+4 - Exit
+Enter your choice (1-4): 3
+
+--- All Student Records ---
+Ebenezer Nwodo - 90
+
+What would you like to do?
+1 - Add a student record
+2 - Update a student's grade
+3 - View all records
+4 - Exit
+Enter your choice (1-4): 4
+Thanks for using the tracker. Goodbye!
+BUILD SUCCESSFUL (total time: 2 minutes 18 seconds)
+
+![Screenshot (26)](https://github.com/user-attachments/assets/bae62a60-6fca-4f74-a82e-cf650341706e)
+
+32. Write a program that simulates a basic ATM system (check balance, deposit, withdraw). 
+    ANSWER
+package cos261test;
+import java.util.Scanner;
+
+public class Cos261Test {
+    public static void main(String[] args) {
+        double balance = 100.00;  // Starting balance
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to Ebenezer-ATM!");
+        while (true) {
+            System.out.println("\n1. Check Balance");
+            System.out.println("2. Deposit Money");
+            System.out.println("3. Withdraw Money");
+            System.out.println("4. Exit");
+            System.out.print("Choose an option (1-4): ");
+            String choice = input.nextLine();
+            if (choice.equals("1")) {
+                System.out.println("Your current balance is: $" + balance);
+            } else if (choice.equals("2")) {
+                System.out.print("Enter amount to deposit: $");
+                double amount = input.nextDouble();
+                input.nextLine(); // clear buffer
+                if (amount > 0) {
+                    balance += amount;
+                    System.out.println("$" + amount + " deposited successfully.");
+                } else {
+                    System.out.println("Invalid deposit amount.");
+                }
+            } else if (choice.equals("3")) {
+                System.out.print("Enter amount to withdraw: $");
+                double amount = input.nextDouble();
+                input.nextLine(); // clear buffer
+                if (amount <= balance && amount > 0) {
+                    balance -= amount;
+                    System.out.println("$" + amount + " withdrawn successfully.");
+                } else {
+                    System.out.println("Insufficient funds or invalid amount.");
+                }
+            } else if (choice.equals("4")) {
+                System.out.println("Thank you for banking with us. Goodbye!");
+                break;
+            } else {
+                System.out.println("Invalid option. Please choose between 1–4.");
+            }
+        }
+        input.close();
+    }
+}
+    
+run:
+Welcome to Ebenezer-ATM!
+
+1. Check Balance
+2. Deposit Money
+3. Withdraw Money
+4. Exit
+Choose an option (1-4): 1
+Your current balance is: $100.0
+
+1. Check Balance
+2. Deposit Money
+3. Withdraw Money
+4. Exit
+Choose an option (1-4): 2
+Enter amount to deposit: $5000000
+$5000000.0 deposited successfully.
+
+1. Check Balance
+2. Deposit Money
+3. Withdraw Money
+4. Exit
+Choose an option (1-4): 3
+Enter amount to withdraw: $1000000
+$1000000.0 withdrawn successfully.
+
+1. Check Balance
+2. Deposit Money
+3. Withdraw Money
+4. Exit
+Choose an option (1-4): 1
+Your current balance is: $4000100.0
+
+1. Check Balance
+2. Deposit Money
+3. Withdraw Money
+4. Exit
+Choose an option (1-4): 4
+Thank you for banking with us. Goodbye!
+BUILD SUCCESSFUL (total time: 36 seconds)
+
+![Screenshot (27)](https://github.com/user-attachments/assets/d785be0f-5a63-4232-9e38-3f733fecde8c)
+
