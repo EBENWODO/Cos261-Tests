@@ -228,7 +228,7 @@ BUILD SUCCESSFUL (total time: 0 seconds)
 ![Screenshot (19)](https://github.com/user-attachments/assets/a9844e04-11c5-439a-bb91-cde78dcbc27c)
 
 
-14. Create a base class Person and a subclass Teacher.
+13. Create a base class Person and a subclass Teacher.
     ANSWER
 package cos261test;
 
